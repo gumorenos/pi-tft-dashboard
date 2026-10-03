@@ -1,0 +1,9 @@
+[Unit]
+Description=Monitor del Pi con avisos ntfy
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/pi-monitor.sh
+TimeoutStartSec=55
+Nice=10

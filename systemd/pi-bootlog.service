@@ -1,0 +1,10 @@
+[Unit]
+Description=Registrar arranque del Pi
+After=local-fs.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/pi-bootlog.sh
+
+[Install]
+WantedBy=multi-user.target

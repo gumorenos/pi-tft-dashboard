@@ -1,0 +1,9 @@
+[Unit]
+Description=Respaldo de configuración del Pi
+RequiresMountsFor=/mnt/ssd
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/pi-backup.sh
+Nice=10
+IOSchedulingClass=idle

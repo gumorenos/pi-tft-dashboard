@@ -1,0 +1,21 @@
+[Unit]
+Description=TFT Dashboard
+After=pihole-FTL.service network-online.target tailscaled.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/root
+EnvironmentFile=/etc/dashboard.env
+ExecStartPre=/bin/sleep 5
+ExecStart=/usr/bin/python3 /root/dashboard.py
+Restart=always
+WatchdogSec=60
+NotifyAccess=main
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

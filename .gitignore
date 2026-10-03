@@ -1,0 +1,21 @@
+__pycache__/
+*.py[cod]
+*.log
+*.raw
+*.png
+*.bak*
+.env
+.venv/
+venv/
+dist/
+build/
+
+# Capturas de documentacion
+!docs/*.png
+*.key
+*.age
+age-*.txt
+secretos*
+backup-key*
+!*.example
+!tools/public-docs/*.png
