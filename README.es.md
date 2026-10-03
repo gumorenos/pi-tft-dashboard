@@ -11,6 +11,28 @@ Dashboard para una Raspberry Pi 3B+ con DietPi/Debian, dibujado directamente en 
 
 > **Advertencia:** estos scripts se ejecutan como root y pueden reiniciar servicios y el equipo (reinicio de último recurso, botones de reinicio, watchdog). Úsalo bajo tu responsabilidad: revisa los scripts antes de instalarlos y pruébalo primero en un Pi de pruebas. Se ofrece sin garantía (ver `LICENSE`).
 
+## Idiomas: qué está en español y qué es bilingüe
+
+| Parte | Español | Inglés |
+|---|---|---|
+| README, guía de restauración (`docs/RESTAURAR.md` / `docs/RESTORE.md`) y README de nanobot | Sí | Sí |
+| Plantillas del agente de nanobot (`AGENTS` y `USER`, `.md.example` / `.en.md.example`) | Sí | Sí |
+| Comentarios de los `.env.example` | Sí | Sí |
+| Textos de la pantalla TFT: etiquetas, botones, fechas, avisos y descripción del clima (`DASHBOARD_LANG=es\|en`, por defecto `es`) | Sí | Sí |
+| Capturas de `docs/` | Sí | Sí |
+
+**Solo en español** (por ahora):
+
+- Los comentarios y docstrings del código.
+- Los avisos de ntfy de `pi-monitor.sh`, `pi-ssh-notify.sh` y `remote-watch.sh`.
+- La salida de `install.sh`, de los asistentes de nanobot (`nanobot-telegram-setup`, `nanobot-opencode-setup`, `nanobot-add-models`, `nanobot-secrets-to-env`) y de `backlight-test.sh`.
+- El log de los respaldos y el README que se genera dentro del repo de respaldos.
+- Los mensajes de log del dashboard y la descripción de las unidades de systemd.
+- Las herramientas MCP de nanobot (`nanobot/pi-tools/server.py`): descripciones y respuestas.
+- Los nombres y comentarios de las pruebas.
+
+Si necesitas esas partes en inglés, los textos están agrupados y son fáciles de traducir; las contribuciones son bienvenidas.
+
 ## Características
 
 - Renderizado directo al framebuffer con PIL, sin X11, SDL ni pygame. Solo se escriben las filas que cambiaron y el texto se cachea (~4 % de un núcleo en un Pi 3B+).

@@ -12,6 +12,28 @@ A dashboard for a Raspberry Pi 3B+ running DietPi/Debian, drawn straight into th
 
 > **Warning:** these scripts run as root and can restart services and reboot the machine (last-resort reboot, reboot buttons, watchdog). Use them at your own risk: read the scripts before installing them and try them on a spare Pi first. Provided without warranty (see `LICENSE`).
 
+## Languages: what is in Spanish and what is bilingual
+
+| Part | Spanish | English |
+|---|---|---|
+| README, restore guide (`docs/RESTAURAR.md` / `docs/RESTORE.md`) and nanobot README | Yes | Yes |
+| nanobot agent templates (`AGENTS` and `USER`, `.md.example` / `.en.md.example`) | Yes | Yes |
+| Comments in the `.env.example` files | Yes | Yes |
+| TFT screen texts: labels, buttons, dates, warnings and the weather description (`DASHBOARD_LANG=es\|en`, default `es`) | Yes | Yes |
+| Screenshots in `docs/` | Yes | Yes |
+
+**Spanish only** (for now):
+
+- Code comments and docstrings.
+- The ntfy alerts from `pi-monitor.sh`, `pi-ssh-notify.sh` and `remote-watch.sh`.
+- The output of `install.sh`, of the nanobot helpers (`nanobot-telegram-setup`, `nanobot-opencode-setup`, `nanobot-add-models`, `nanobot-secrets-to-env`) and of `backlight-test.sh`.
+- The backup log and the README generated inside the backups repo.
+- The dashboard's log messages and the systemd unit descriptions.
+- The nanobot MCP tools (`nanobot/pi-tools/server.py`): descriptions and responses.
+- Test names and comments.
+
+If you need those parts in English, the texts are grouped together and easy to translate; contributions are welcome.
+
 ## Features
 
 - Renders directly to the framebuffer with PIL: no X11, SDL or pygame. Only the rows that changed are written and text is cached (~4 % of one core on a Pi 3B+).
